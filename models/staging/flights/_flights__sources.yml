@@ -1,0 +1,46 @@
+sources:
+  - name: demo_src
+    description: Данные из БД авиаперелетов
+    tables:
+      - name: aircrafts
+        description: Модели самолетов
+        columns:
+          - name: aircraft_code 
+            description: Код модели
+          - name: model
+            description: Наименование
+          - name: range
+            description: Макс. дальность перелета
+      - name: airports
+        description: Аэропорты
+        columns:
+          - name: airport_code
+            description: Код аэропорта
+          - name: airport_name
+            description: Наименование
+          - name: city
+          - name: coordinates
+          - name: timezone
+      - name: seats
+        description: Места в самолетах
+        columns:
+          - name: aircraft_code
+          - name: seat_no
+          - name: fare_conditions
+      - name: aircrafts_data
+        description: Данные о самолетах
+      - name: airports_data
+        description: Данные об аэропортах
+      - name: boarding_passes
+      - name: bookings
+        columns:
+          - name: book_ref
+          - name: book_date
+          - name: total_amount
+      - name: flights
+      - name: flights_v
+      - name: routes
+      - name: ticket_flights
+      - name: tickets
+
+
