@@ -13,6 +13,13 @@ select
     status, 
     aircraft_code, 
     actual_departure, 
-    actual_arrival
+    actual_arrival,
+
+    case 
+        WHEN actual_departure is not null and scheduled_departure < actual_departure
+            THEN actual_departure - scheduled_departure
+            else INTERVAL '0 seconds'
+    end as flight_departure_delay        
+
 from
     {{ ref('stg_booking__flights') }}
